@@ -1,4 +1,3 @@
-
 # Meal Calorie Tracker
 
 A full-stack web application for tracking daily meals and calorie intake. Built with React, Node.js, Express, and MongoDB.
@@ -31,7 +30,7 @@ The Meal Calorie Tracker is a comprehensive web application designed to help use
 - MongoDB with Mongoose
 - Express Validator for input validation
 - CORS enabled
-- Error handling middleware
+- Error handling   middleware
 
 ## Project Structure
 
