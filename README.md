@@ -1,17 +1,17 @@
-# Student Progress Tracker
 
-A full-stack web application for tracking student progress across different subjects. Built with React, Node.js, Express, and MongoDB.
+# Meal Calorie Tracker
+
+A full-stack web application for tracking daily meals and calorie intake. Built with React, Node.js, Express, and MongoDB.
 
 ## Overview
 
-The Student Progress Tracker is a comprehensive web application designed to help educators and administrators track student performance across various subjects. With an intuitive interface and robust backend, it provides real-time updates and detailed progress monitoring.
+The Meal Calorie Tracker is a comprehensive web application designed to help users monitor their daily food intake and manage their calorie consumption. With an intuitive interface and robust backend, it provides real-time updates and detailed meal tracking.
 
 ## Features
 
-- Create, read, update, and delete student records
-- Track student progress by subject
-- Score tracking (0-100)
-- Progress level categorization (Beginner, Intermediate, Advanced)
+- Create, read, update, and delete meal records
+- Track daily calorie intake
+- Meal categorization (Breakfast, Lunch, Dinner, Snacks)
 - Responsive design for all devices
 - Real-time form validation
 - Interactive notifications
@@ -20,7 +20,7 @@ The Student Progress Tracker is a comprehensive web application designed to help
 
 ### Frontend
 - React 18
-- React Router v6
+- React Router
 - React Toastify for notifications
 - Axios for API calls
 - Modern CSS with Grid and Flexbox
@@ -36,7 +36,7 @@ The Student Progress Tracker is a comprehensive web application designed to help
 ## Project Structure
 
 ```
-student-progress-tracker/
+meal-calorie-tracker/
 ├── frontend/                # React frontend
 │   ├── public/             # Static files
 │   └── src/
@@ -64,7 +64,7 @@ student-progress-tracker/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd student-progress-tracker
+cd meal-calorie-tracker
 ```
 
 2. Install Backend Dependencies:
@@ -76,7 +76,7 @@ npm install
 3. Configure Environment Variables:
 Create a `.env` file in the backend directory:
 ```env
-MONGO_URI=mongodb://localhost:27017/student-progress-tracker
+MONGODB_URI=mongodb://localhost:27017/meal-calorie-tracker
 PORT=5000
 ```
 
@@ -102,81 +102,18 @@ npm start
 ```
 The application will open in your browser at http://localhost:3000
 
-## Project Structure
-
-```
-student-progress-tracker
-├── backend
-│   ├── src
-│   │   ├── controllers
-│   │   ├── models
-│   │   ├── routes
-│   │   ├── app.js
-│   │   └── config
-│   ├── package.json
-│   └── README.md
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── App.jsx
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
-└── README.md
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js
-- MongoDB
-
-### Installation
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd student-progress-tracker
-   ```
-
-2. Install backend dependencies:
-   ```
-   cd backend
-   npm install
-   ```
-
-3. Install frontend dependencies:
-   ```
-   cd frontend
-   npm install
-   ```
-
-### Running the Application
-
-1. Start the backend server:
-   ```
-   cd backend
-   npm start
-   ```
-
-2. Start the frontend application:
-   ```
-   cd frontend
-   npm start
-   ```
-
 ### API Endpoints
 
-- `GET /api/students`: Retrieve all students.
-- `POST /api/students`: Add a new student.
+- `GET /api/meals`: Retrieve all meals
+- `POST /api/meals`: Add a new meal
+- `PUT /api/meals/:id`: Update a meal
+- `DELETE /api/meals/:id`: Delete a meal
 
 ## Implementation Details
 
 ### Backend Implementation
-The backend is built with Node.js and Express, following the MVC pattern:
-- **Models**: Mongoose schema for student data with validation
+The backend follows the MVC pattern:
+- **Models**: Mongoose schema for meal data with validation
 - **Controllers**: Separate logic for handling CRUD operations
 - **Routes**: RESTful API endpoints with proper error handling
 - **Middleware**: Custom error handling and input validation
@@ -184,8 +121,9 @@ The backend is built with Node.js and Express, following the MVC pattern:
 ### Frontend Implementation
 The React frontend is organized into reusable components:
 - **Components**: 
-  - `StudentForm.jsx`: Handles student data input and updates
-  - `StudentList.jsx`: Displays student data in a grid layout
+  - `MealForm.jsx`: Handles meal data input and updates
+  - `MealList.jsx`: Displays meal data in a grid layout
+  - `CalorieSummary.jsx`: Shows total calories and daily breakdown
 - **Pages**:
   - `Dashboard.jsx`: Main container managing state and API calls
 - **Styles**:
@@ -194,38 +132,18 @@ The React frontend is organized into reusable components:
 
 ### Database Schema
 ```javascript
-Student {
-  name: String,          // Student's full name
-  subject: String,       // Subject name
-  score: Number,         // Score (0-100)
-  progressLevel: String  // Beginner/Intermediate/Advanced
+Meal {
+  name: String,          // Name of the meal
+  calories: Number,      // Calorie count
+  category: String,      // Breakfast/Lunch/Dinner/Snacks
+  date: Date,           // Date of consumption
+  notes: String         // Optional notes about the meal
 }
 ```
 
-### Key Features Implementation
-1. **Real-time Form Validation**
-   - Frontend validation using controlled components
-   - Backend validation using express-validator
-   - Immediate user feedback through toast notifications
-
-2. **State Management**
-   - React hooks for local state management
-   - Axios for API communication
-   - Proper error handling and loading states
-
-3. **Responsive UI**
-   - CSS Grid for layout management
-   - Flexbox for component alignment
-   - Mobile-first design approach
-
-4. **Error Handling**
-   - Custom error middleware for consistent error responses
-   - Toast notifications for user feedback
-   - Form validation on both client and server
-
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
